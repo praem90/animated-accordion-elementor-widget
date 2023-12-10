@@ -33,7 +33,27 @@
 .animated-accordion-container .accordion-item .accordion-item-header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding: 2rem 0 1rem;
+}
+
+.animated-accordion-container .accordion-item:not(.accordion-item-detail) .accordion-description {
+	display: none;
+}
+
+.animated-accordion-container .accordion-item .accordion-item-header svg {
+	width: 1rem;
+	height: 1rem;
+	color: #fff;
+}
+
+.animated-accordion-container .accordion-item .accordion-item-header i {
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: #102C40;
+	border-radius: .75rem;
+	padding: .25rem;
+	transition: opacity .3s ease-out;
 }
 
 .animated-accordion-container .accordion-item.active .accordion-item-header i {
@@ -50,3 +70,4 @@
 .animated-accordion-container .accordion-item.accordion-item-detail .accordion-item-header {
 	visibility: hidden;
 }
+

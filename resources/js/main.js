@@ -19,6 +19,7 @@ jQuery(function() {
 		items.removeClass('active');
 		jQuery(this).addClass('active');
 		activeItem = jQuery(this).index();
+		itemDetail.find('.accordion-description').html(jQuery(this).find('.accordion-description').html());
 		rearrangeItems();
 	});
 
@@ -42,5 +43,5 @@ jQuery(function() {
 		});
 	}
 
-	rearrangeItems();
+	items.eq(0).click();
 });
