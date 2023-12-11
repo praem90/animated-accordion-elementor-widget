@@ -22,12 +22,16 @@
 .animated-accordion-container .accordion-item h3 {
 	padding: 0;
 	margin: 0;
+	font-size: 24px;
+    font-weight: bold;
 }
 
 
 .animated-accordion-container .accordion-item.active, 
 .animated-accordion-container .accordion-item.active h3 {
 	color: #fff;
+	font-size: 24px;
+    font-weight: bold;
 }
 
 .animated-accordion-container .accordion-item .accordion-item-header {
@@ -35,6 +39,7 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 2rem 0 1rem;
+	cursor: pointer;
 }
 
 .animated-accordion-container .accordion-item:not(.accordion-item-detail) .accordion-description {
@@ -54,6 +59,12 @@
 	border-radius: .75rem;
 	padding: .25rem;
 	transition: opacity .3s ease-out;
+	color: white;
+	text-align: center;
+}
+
+.animated-accordion-container .accordion-item .accordion-item-header i:before{
+	font-size: 12px;
 }
 
 .animated-accordion-container .accordion-item.active .accordion-item-header i {
@@ -62,7 +73,7 @@
 
 .animated-accordion-container .accordion-item.accordion-item-detail {
 	z-index: 1;
-	height: 400px;
+	height: 275px;
 	background-color: #102C40;
 	color: #fff;
 }

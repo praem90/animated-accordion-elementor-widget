@@ -5,7 +5,7 @@ jQuery(function() {
 	const itemHeight = items.eq(0).height();
 
 	const itemDetail = container.find('.accordion-item.accordion-item-detail');
-	const itemDetailHeight = 400;
+	const itemDetailHeight = 300;
 
 	const containerHeight = itemHeight * 3 + itemDetailHeight;
 	container.height(containerHeight);
