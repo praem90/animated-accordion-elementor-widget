@@ -45,3 +45,32 @@ jQuery(function() {
 
 	items.eq(0).click();
 });
+
+// Timeline
+jQuery(function() {
+	const timelineContainer = jQuery('.timeline-slider-container');
+	const timelineRow = timelineContainer.find('.timeline-slider-row');
+
+	let totalWidth = 0;
+	timelineRow.find('.timeline-slider-col').each(function () {
+		totalWidth += jQuery(this).width();
+	});
+	const width = timelineRow.find('.timeline-slider-col:visible').eq(1).width();	
+
+	timelineContainer.find(".timeline-slider-control-right").on("click", function() {
+		const newWidth = timelineRow.scrollLeft() + width * 2;
+
+		if (totalWidth > newWidth) {
+			timelineRow.animate({scrollLeft: newWidth});
+		}
+	});
+
+	timelineContainer.find(".timeline-slider-control-left").on("click", function() {
+		const width = timelineRow.find('.timeline-slider-col:visible').eq(1).width();	
+		const newWidth = timelineRow.scrollLeft() - width * 2;
+
+		if (timelineRow.scrollLeft() > 0) {
+			timelineRow.animate({scrollLeft: newWidth});
+		}
+	});
+});

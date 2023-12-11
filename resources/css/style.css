@@ -82,3 +82,92 @@
 	visibility: hidden;
 }
 
+/** Timeline **/
+
+.timeline-slider-container {
+	width: 100%;
+}
+
+.timeline-slider-container .timeline-slider-row {
+	width: 100%;
+	overflow-x: hidden;
+	display:flex;
+	flex-wrap: no-wrap;
+}
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-col > div:first-child {
+	border-bottom: 1px solid #102C40;
+}
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-col:nth-child(odd) > div:nth-child(1),
+.timeline-slider-container .timeline-slider-row .timeline-slider-col:nth-child(even) > div:nth-child(2) {
+	border-right: 1px solid #102C40;
+ }
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-col:first-child > div:nth-child(1),
+.timeline-slider-container .timeline-slider-row .timeline-slider-col:last-child > div:nth-child(2) {
+	border-right: none;
+ }
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-col > div {
+	padding: 1rem;
+ }
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-col:first-child .timeline-slider-description {
+	background: transparent;
+}
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-year
+{
+	text-align: right;
+}
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-year,
+.timeline-slider-container .timeline-slider-row .timeline-slider-description {
+	height: 200px;
+}
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-description {
+	background-color: #102C40;
+	color: white;
+	padding: 2rem;
+	border-radius: 1rem;
+}
+
+.timeline-slider-container .timeline-slider-row .timeline-slider-description p{
+	white-space: nowrap;
+}
+
+.timeline-slider-header {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 1rem;
+}
+
+.timeline-slider-controls {
+	display: flex;
+}
+
+.timeline-slider-controls div[class^="timeline-slider-control-"] {
+	width: 4rem;
+	height: 4rem;
+	border: 1px solid #dedede;
+	border-radius: 4rem;
+	margin-left: 1rem;
+	padding: 0.5rem;
+}
+
+.timeline-slider-controls div[class^="timeline-slider-control-"] svg {
+    padding: 1rem;
+    border-radius: 3rem;
+    background: #dedede;
+}
+
+.timeline-slider-controls .timeline-slider-control-left {
+	transform: translate(5rem,0);
+	transition: all .3s ease-out;
+
+}
+.timeline-slider-controls .timeline-slider-control-left.has-left {
+	transform: translate(0rem,0) rotate(180deg);
+}

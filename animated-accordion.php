@@ -13,6 +13,7 @@ function register_hello_world_widget( $widgets_manager ) {
 	require __DIR__ . '/widget.php';
 
 	$widgets_manager->register( new \Elementor_Animated_Accordion_Widget() );
+	$widgets_manager->register( new \Elementor_Timeline_Slider_Widget() );
 }
 
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
