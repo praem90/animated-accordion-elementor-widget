@@ -50,6 +50,8 @@ jQuery(function() {
 jQuery(function() {
 	const timelineContainer = jQuery('.timeline-slider-container');
 	const timelineRow = timelineContainer.find('.timeline-slider-row');
+	const leftControl = timelineContainer.find(".timeline-slider-control-left");
+	const rightControl = timelineContainer.find(".timeline-slider-control-right");
 
 	let totalWidth = 0;
 	timelineRow.find('.timeline-slider-col').each(function () {
@@ -57,20 +59,35 @@ jQuery(function() {
 	});
 	const width = timelineRow.find('.timeline-slider-col:visible').eq(1).width();	
 
-	timelineContainer.find(".timeline-slider-control-right").on("click", function() {
+	rightControl.on("click", function(e) {
+		e.preventDefault()
 		const newWidth = timelineRow.scrollLeft() + width * 2;
+		leftControl.removeClass('has-left');
+		leftControl.removeAttr('disabled');
 
 		if (totalWidth > newWidth) {
 			timelineRow.animate({scrollLeft: newWidth});
+			leftControl.addClass('has-left');
+		}
+
+		if ((newWidth + timelineRow.width()) > totalWidth ) {
+			rightControl.attr('disabled', 'disabled');
 		}
 	});
 
-	timelineContainer.find(".timeline-slider-control-left").on("click", function() {
+	leftControl.on("click", function(e) {
+		e.preventDefault()
 		const width = timelineRow.find('.timeline-slider-col:visible').eq(1).width();	
 		const newWidth = timelineRow.scrollLeft() - width * 2;
+		rightControl.removeAttr('disabled');
+
+		if (newWidth <= 0) {
+			leftControl.removeClass('has-left');
+			leftControl.prop('disabled', true);
+		}
 
 		if (timelineRow.scrollLeft() > 0) {
 			timelineRow.animate({scrollLeft: newWidth});
-		}
+		} 
 	});
 });
